@@ -71,6 +71,8 @@ export default class Controls {
             this.quadBlank = document.getElementById("quad");
             if (this.quadBlank) this.quadBlank.scrollIntoView({behavior: "instant"});
             this.flag = false;
+            // Disable 3D object interactions when on a page
+            this.select.disableInteractions();
         }
     }
 
@@ -82,10 +84,11 @@ export default class Controls {
                                                 0
             );
         if (this.flag) {
-            
             this.quadBlank = document.getElementById("monitor");
             if (this.quadBlank) this.quadBlank.scrollIntoView({behavior: "instant"});
             this.flag = false;
+            // Disable 3D object interactions when on a page
+            this.select.disableInteractions();
         }
     }
 
@@ -99,10 +102,11 @@ export default class Controls {
                                                 0
             );
         if (this.flag) {
-        
             this.quadBlank = document.getElementById("aboutMe");
             if (this.quadBlank) this.quadBlank.scrollIntoView({behavior: "instant"});
             this.flag = false;
+            // Disable 3D object interactions when on a page
+            this.select.disableInteractions();
         }
     }
 
@@ -143,7 +147,12 @@ export default class Controls {
         
         if (this.viewCont.current < 0.001) {
             // console.log(this.viewCont.current);
-            if (this.releaseFlag) { this.home.scrollIntoView({behavior: "instant"}); this.releaseFlag = false;}
+            if (this.releaseFlag) { 
+                this.home.scrollIntoView({behavior: "instant"}); 
+                this.releaseFlag = false;
+                // Re-enable 3D object interactions when back to home
+                this.select.enableInteractions();
+            }
         }
 
         document.querySelector(':root').style.setProperty('--transparency', this.viewCont.current);

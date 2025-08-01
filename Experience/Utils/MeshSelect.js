@@ -9,6 +9,8 @@ export default class MeshSelect extends EventEmitter {
         this.scene = this.experience.scene;
         this.camera = this.experience.camera;
         this.renderer = this.experience.renderer;
+        
+        this.interactionsEnabled = true; // Flag to enable/disable interactions
 
         this.raycast();
     }
@@ -37,6 +39,11 @@ export default class MeshSelect extends EventEmitter {
             if (ev.clientX < rect.left || ev.clientX > rect.right || 
                 ev.clientY < rect.top || ev.clientY > rect.bottom) {
                 return; // Click is outside canvas, don't handle it
+            }
+            
+            // Check if interactions are enabled
+            if (!this.interactionsEnabled) {
+                return; // Interactions disabled, don't handle clicks
             }
             
             pointer.x = ( ev.clientX / window.innerWidth ) * 2 - 1;
@@ -81,6 +88,16 @@ export default class MeshSelect extends EventEmitter {
     }
 
     update() {
+    }
+
+    // Method to disable interactions (when on a page)
+    disableInteractions() {
+        this.interactionsEnabled = false;
+    }
+
+    // Method to enable interactions (when back to home)
+    enableInteractions() {
+        this.interactionsEnabled = true;
     }
 
 }

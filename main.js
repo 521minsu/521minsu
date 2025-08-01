@@ -7,18 +7,18 @@ const experience = new Experience(document.querySelector('.experience-canvas'));
 console.log('Main.js loaded');
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM loaded, looking for back button...');
-  const backButton = document.querySelector('.back-button');
+  console.log('DOM loaded, looking for back buttons...');
+  const backButtons = document.querySelectorAll('.back-button');
   
-  console.log('Back button found:', backButton);
+  console.log('Back buttons found:', backButtons.length);
   
   // Debug: Check if Controls is accessible
   console.log('Experience instance:', experience);
   console.log('World:', experience.world);
   console.log('Controls:', experience.world?.controls);
   
-  if (backButton) {
-    console.log('Adding click listener to back button');
+  if (backButtons.length > 0) {
+    console.log('Adding click listeners to all back buttons');
     
     // Function to trigger back transition
     function triggerBackTransition() {
@@ -71,37 +71,42 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     
-    // Simple click handler
-    backButton.onclick = function(e) {
-      console.log('Back button clicked via onclick!');
-      e.preventDefault();
-      e.stopPropagation();
-      triggerBackTransition();
-      return false;
-    };
-    
-    // Also try addEventListener
-    backButton.addEventListener('click', function(e) {
-      console.log('Back button clicked via addEventListener!');
-      e.preventDefault();
-      e.stopPropagation();
-      triggerBackTransition();
-    });
-    
-    // Also add click handler to the span inside the button
-    const backButtonSpan = backButton.querySelector('span');
-    if (backButtonSpan) {
-      console.log('Adding click listener to span');
-      backButtonSpan.onclick = function(e) {
-        console.log('Back button span clicked!');
+    // Add click handlers to all back buttons
+    backButtons.forEach((backButton, index) => {
+      console.log(`Adding click listener to back button ${index + 1}`);
+      
+      // Simple click handler
+      backButton.onclick = function(e) {
+        console.log(`Back button ${index + 1} clicked via onclick!`);
         e.preventDefault();
         e.stopPropagation();
         triggerBackTransition();
         return false;
       };
-    }
+      
+      // Also try addEventListener
+      backButton.addEventListener('click', function(e) {
+        console.log(`Back button ${index + 1} clicked via addEventListener!`);
+        e.preventDefault();
+        e.stopPropagation();
+        triggerBackTransition();
+      });
+      
+      // Also add click handler to the span inside the button
+      const backButtonSpan = backButton.querySelector('span');
+      if (backButtonSpan) {
+        console.log(`Adding click listener to span for back button ${index + 1}`);
+        backButtonSpan.onclick = function(e) {
+          console.log(`Back button ${index + 1} span clicked!`);
+          e.preventDefault();
+          e.stopPropagation();
+          triggerBackTransition();
+          return false;
+        };
+      }
+    });
   } else {
-    console.log('Back button not found!');
+    console.log('No back buttons found!');
   }
 });
 
