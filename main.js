@@ -6,6 +6,24 @@ const experience = new Experience(document.querySelector('.experience-canvas'));
 // Add functionality for the BACK button
 console.log('Main.js loaded');
 
+// Mobile device detection
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+         (navigator.maxTouchPoints && navigator.maxTouchPoints > 2) ||
+         window.innerWidth <= 768;
+}
+
+// Show mobile blocker if on mobile device
+function checkMobileDevice() {
+  const mobileBlocker = document.getElementById('mobile-blocker');
+  if (isMobileDevice()) {
+    mobileBlocker.classList.add('show');
+    // Prevent any interaction with the page
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+  }
+}
+
 // Scroll blocking functionality
 let scrollBlocked = false;
 
@@ -62,8 +80,16 @@ window.setCurrentSection = setCurrentSection;
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM loaded, looking for back buttons...');
   
+  // Check for mobile devices first
+  checkMobileDevice();
+  
   // Block scrolling on home page
   blockScroll();
+  
+  // Listen for window resize to handle orientation changes
+  window.addEventListener('resize', () => {
+    checkMobileDevice();
+  });
   
   const backButtons = document.querySelectorAll('.back-button');
   
