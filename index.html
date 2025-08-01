@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/home.png" />
+    <!-- <a href="https://www.flaticon.com/free-icons/home-button" title="home button icons">Home button icons created by bqlqn - Flaticon</a> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>3D Portfolio - Minsu Kim</title>
   </head>
   <body>
     <div class="experience">
@@ -26,6 +27,7 @@
             <div class="hero-second dark-blue-text">
               <p class="hero-second-subheading">Try Pressing on</p>
               <p class="hero-second-subheading">Interesting objects!</p>
+              <p class="hero-second-hint">HINT: Frame, Monitor, Quadruped</p>
             </div>
 
           </div>
@@ -51,13 +53,29 @@
             </div>
 
             <div class="section-detail-wrapper">
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-            </div>
+              <h3 class="section-heading">Kia Ora, I'm Minsu!</h3>
+                <p class="section-text">A highly motivated graduate engineer with a Master's in Mechatronics Engineering and a Bachelor’s in Computer Science, offering a unique blend of programming expertise and hardware integration. Experienced in robotics, full-stack web development, and ROS Gazebo simulation, with hands-on projects including a quadruped robot, a 3D web portfolio, and an autonomous navigation simulation with ROS. Proficient in Python, C++, and CAD tools, with a proven track record of academic excellence, leadership, and collaborative project work. Passionate about applying and continuously learning innovative engineering and software solutions to solve real-world challenges. </p>
+
+              <h3 class="section-heading">Education</h3>
+                <p class="section-text">Master of Mechatronics Engineering, University of Auckland, New Zealand (2024-2025) <br>
+                 - First in Course Award in COMPSYS 732 <br>
+                 - Researched for a thesis on an "Adaptive, Underactuated Prosthetic Hand with a Selectively Disengageable Differential Mechanism" <br>
+                 - Recipient of the "University of Auckland Research Masters Scholarship"</p>
+                <p class="section-text">Bachelor of Computer Science, University of Auckland, New Zealand (2021-2023) <br>
+                 - Grade: 8.00+ / 9.00 <br>
+                 - First in Course Award in STATS 220 <br>
+                 - Outstanding Achievement in COMPSCI130, 210, 220, 230, 235, 335, 345, 373, STATS 220 </p>
+
+              <h3 class="section-heading">Languages</h3>
+                <p class="section-text">English: Fluent <br>
+                Korean: Fluent <br>
+                Japanese: Intermediate (JLPT N3)</p>
+
+              <h3 class="section-heading">Contacts</h3>
+                <p class="section-text">Email: <a href="mailto:minsuk.nz@gmail.com" class="dark-blue-text">minsuk.nz@gmail.com</a></p>
+                <p class="section-text">LinkedIn: <a href="https://www.linkedin.com/in/521minsu/" class="dark-blue-text">https://www.linkedin.com/in/521minsu/</a></p>
+                <p class="section-text">GitHub: <a href="https://github.com/521minsu" class="dark-blue-text">https://github.com/521minsu</a></p>
+              </div>
 
           </section>
 
@@ -80,13 +98,22 @@
             </div>
 
             <div class="section-detail-wrapper">
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-            </div>
+              <h3 class="section-heading">Blind-SLAM Navigation Simulation</h3>
+              <p class="section-text"> Simulation Video: </p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/lQWWqAaxqto?si=iVMk9eMD4HJVn8N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <p class="section-text">Github: <a href="https://github.com/521minsu/kobuki_navigation" class="dark-blue-text">https://github.com/521minsu/kobuki_navigation</a></p>
+              <p class="section-text">In this project, I have simulated a blind navigation task in an unfamiliar environment using ROS and TurtleBot 2 with an RGB-D Camera. The task involved SLAM-based exploration, real-time goal object detection, and return-to-origin navigation after spotting the goal object. <br>
+                Two SLAM algorithms, improved Rao-Blackwellised Particle Filter (iRBPF) and RTAB-Map, were compared. Out of the two algorithms, RTAB-Map depicted a superior accuracy and reliability due to better handling of RGB-D data and loop closure. For navigation, Dijkstra’s algorithm (global planner) and the Dynamic Window Approach (local planner) were used, balancing reliability and computational efficiency. The search component tested Random Obstacle Avoidance and Frontier-Based Exploration (FBE), with FBE achieving a 100% success rate by ensuring full map coverage without blind spots or being stuck in a loop. <br>
+                Overall, the project demonstrated effective and promising results in simulation, with the next step being a physical implementation and further optimisation for a faster search.</p>
+              <h3 class="section-heading">Barcode Detector with GUI</h3>
+              <p class="section-text"> Project Image: </p>
+              <img src="https://media.licdn.com/dms/image/v2/D562DAQHenVa-1elb4g/profile-treasury-image-shrink_800_800/B56Zhj50N.G4AY-/0/1754022757858?e=1754650800&v=beta&t=jkGLCaVzqxmjjYdTSO6KhrdQUvUQTrYrDMOYqXz9tXY" alt="Quadruped Robot" class="section-image">
+              <p class="section-text">Github: <a href="https://github.com/521minsu/BarcodeDetectorGUI" class="dark-blue-text">https://github.com/521minsu/BarcodeDetectorGUI</a></p>
+              <p class="section-text">Built a real-time barcode detection application with two distinct versions: a core non-GUI version developed using only built-in Python libraries to meet assignment constraints, and an extended GUI version without restrictions for advanced functionality and live detection. <br>
+                The non-GUI version is only built using basic Python libraries, having to implement each step of image detection from scratch. Implemented detection methods include: Gaussian filter, thresholding, erosion/dilation, and connected component detection. <br>
+                The GUI version, built with PySimpleGUI, OpenCV, and Pyzbar, enables users to dynamically tune image processing parameters, and immediately view results on uploaded images or live webcam feeds. OpenCV was benchmarked as the optimal implementation for real-time performance. <br>
+                In the future, further optimisation can be done by changing the codebase to C or C++, as well as creating an exe file for easier execution of the program.</p>
+              </div>
 
           </section>
 
@@ -109,44 +136,16 @@
             </div>
 
             <div class="section-detail-wrapper">
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
+              
+              <h3 class="section-heading">Project Image</h3>
+              <img src="https://media.licdn.com/dms/image/v2/D562DAQFq8BxH0kX7kw/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1708353541885?e=1754650800&v=beta&t=rJ26Wkx4TBA6pRX0TpXbRzSrepDHwiRSA4Hqc51lunM" alt="Quadruped Robot" class="section-image">
+              <h3 class="section-heading">Project Description & Plan</h3>
+              <p class="section-text">Inspired by the Spot Micro Project, I am currently working on a quadruped robot from scratch, looking forward to walking and running on diverse hard surfaces. This project is planned to be a full-stack engineering project, from detailed 3D modelling in Fusion360 to ROS2 programming on a Raspberry Pi 4.</p>
             </div>
 
           </section>
 
-          <div class="section-margin"></div>
-
-          <section class="second-section section right" id="contactMe">
-            
-            <div class="back-wrapper-left">
-              <div class="back-button green-text"> <span> &lt; BACK </span> </div>
-              <div class="back-deco"></div>
-            </div>
-            
-            <div class="section-intro-wrapper green-border">
-              <h1 class="section-title">
-                <span class="section-title-text green-text">Contact Me</span>
-                <div class="section-title-decoration styleOne dark-green-background"></div>
-                <div class="section-title-decoration styleTwo green-background"></div>
-              </h1>
-              <span class="section-number green-text">Minsu Kim</span>
-            </div>
-
-            <div class="section-detail-wrapper">
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-              <h3 class="section-heading">Lorem Ipsum</h3>
-              <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam temporibus fuga laboriosam quidem. A unde autem quae, modi officiis incidunt nihil esse praesentium excepturi dolor, voluptatem adipisci blanditiis voluptas beatae?</p>
-            </div>
-
-          </section>
+          
         </div>
 
       </div>

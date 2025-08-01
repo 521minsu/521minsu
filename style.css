@@ -132,7 +132,7 @@ html, body {
 
 .section-detail-wrapper {
   position: relative;
-  padding: 20% 5%;
+  padding: 5% 5%;
 }
 
 .section-heading {
@@ -252,7 +252,7 @@ html, body {
 
 .hero-second {
   position: absolute;
-  top: 15%;
+  top: 9%;
   left: 0;
 }
 
@@ -269,6 +269,12 @@ html, body {
 .hero-second-subheading {
   font-weight: 700;
   font-size: 32px;
+  text-align: left;
+}
+
+.hero-second-hint{
+  font-weight: 700;
+  font-size: 18px;
   text-align: left;
 }
 
