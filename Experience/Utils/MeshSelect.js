@@ -29,6 +29,16 @@ export default class MeshSelect extends EventEmitter {
 
         
         window.addEventListener("mousedown", (ev) => {
+            // Only handle clicks if they're on the 3D canvas area
+            const canvas = this.experience.canvas;
+            const rect = canvas.getBoundingClientRect();
+            
+            // Check if click is within the canvas bounds
+            if (ev.clientX < rect.left || ev.clientX > rect.right || 
+                ev.clientY < rect.top || ev.clientY > rect.bottom) {
+                return; // Click is outside canvas, don't handle it
+            }
+            
             pointer.x = ( ev.clientX / window.innerWidth ) * 2 - 1;
             pointer.y = - ( ev.clientY / window.innerHeight ) * 2 + 1;
 

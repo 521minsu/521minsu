@@ -15,6 +15,7 @@ export default class Controls {
 
         this.back = true;
         this.home = document.getElementById("top");
+        this.startZoom = 0.75; // Store the starting zoom level for back transition
 
         
         this.viewCont = {
@@ -46,6 +47,7 @@ export default class Controls {
             // console.log("onClick: released");
             this.releaseFlag = true;
             this.back = true;
+            this.startZoom = this.camera.orthographicCamera.zoom; // Store current zoom for back transition
             
         });
     }
@@ -104,6 +106,13 @@ export default class Controls {
         }
     }
 
+    defaultView() {
+        // When going back, viewCont.current goes from 1 to 0, so we need to reverse the interpolation
+        // We want to interpolate from the stored start zoom to the default zoom (0.75)
+        this.camera.orthographicCamera.zoom = gsap.utils.interpolate(0.75, this.startZoom, this.viewCont.current);
+        this.camera.orthographicCamera.lookAt(0, 1.5, 0);
+    }
+
     resize() {
 
     } 
@@ -142,6 +151,7 @@ export default class Controls {
         if (this.selected == "Quadruped" && this.viewCont.current > 0.0001) { this.quadrupedView(); }
         else if (this.selected == "Monitor") { this.monitorView(); }
         else if (this.selected == "Drawer") { this.drawerView(); }
+        else if (this.defaultView) { this.defaultView(); }
         
 
         this.camera.orthographicCamera.updateProjectionMatrix();
