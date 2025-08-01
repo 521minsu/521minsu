@@ -6,8 +6,65 @@ const experience = new Experience(document.querySelector('.experience-canvas'));
 // Add functionality for the BACK button
 console.log('Main.js loaded');
 
+// Scroll blocking functionality
+let scrollBlocked = false;
+
+function blockScroll() {
+    if (scrollBlocked) return;
+    
+    scrollBlocked = true;
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    
+    // Add scroll event listener to prevent scrolling
+    document.addEventListener('scroll', preventScroll, { passive: false });
+    document.addEventListener('wheel', preventScroll, { passive: false });
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+}
+
+function unblockScroll() {
+    if (!scrollBlocked) return;
+    
+    scrollBlocked = false;
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    
+    // Remove scroll event listeners
+    document.removeEventListener('scroll', preventScroll);
+    document.removeEventListener('wheel', preventScroll);
+    document.removeEventListener('touchmove', preventScroll);
+}
+
+function preventScroll(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+}
+
+// Function to handle section changes
+function setCurrentSection(sectionId) {
+    console.log(`Setting current section to: ${sectionId}`);
+    
+    if (sectionId === 'top') {
+        // Block scrolling when on home page
+        console.log('Blocking scroll for home page');
+        blockScroll();
+    } else if (sectionId) {
+        // Allow scrolling when on other pages
+        console.log(`Unblocking scroll for: ${sectionId}`);
+        unblockScroll();
+    }
+}
+
+// Export the function so Controls.js can use it
+window.setCurrentSection = setCurrentSection;
+
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM loaded, looking for back buttons...');
+  
+  // Block scrolling on home page
+  blockScroll();
+  
   const backButtons = document.querySelectorAll('.back-button');
   
   console.log('Back buttons found:', backButtons.length);
@@ -80,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Back button ${index + 1} clicked via onclick!`);
         e.preventDefault();
         e.stopPropagation();
+        setCurrentSection('top'); // Block scroll on home page
         triggerBackTransition();
         return false;
       };
@@ -89,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Back button ${index + 1} clicked via addEventListener!`);
         e.preventDefault();
         e.stopPropagation();
+        setCurrentSection('top'); // Block scroll on home page
         triggerBackTransition();
       });
       
@@ -100,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(`Back button ${index + 1} span clicked!`);
           e.preventDefault();
           e.stopPropagation();
+          setCurrentSection('top'); // Block scroll on home page
           triggerBackTransition();
           return false;
         };

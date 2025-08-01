@@ -73,6 +73,10 @@ export default class Controls {
             this.flag = false;
             // Disable 3D object interactions when on a page
             this.select.disableInteractions();
+            // Allow scrolling when on this section
+            if (window.setCurrentSection) {
+                window.setCurrentSection("quad");
+            }
         }
     }
 
@@ -89,6 +93,10 @@ export default class Controls {
             this.flag = false;
             // Disable 3D object interactions when on a page
             this.select.disableInteractions();
+            // Allow scrolling when on this section
+            if (window.setCurrentSection) {
+                window.setCurrentSection("monitor");
+            }
         }
     }
 
@@ -107,6 +115,10 @@ export default class Controls {
             this.flag = false;
             // Disable 3D object interactions when on a page
             this.select.disableInteractions();
+            // Allow scrolling when on this section
+            if (window.setCurrentSection) {
+                window.setCurrentSection("aboutMe");
+            }
         }
     }
 
